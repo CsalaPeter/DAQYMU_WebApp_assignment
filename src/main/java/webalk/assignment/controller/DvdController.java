@@ -1,11 +1,11 @@
 package webalk.assignment.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import webalk.assignment.model.Dvd;
 import webalk.assignment.service.DvdService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -17,7 +17,23 @@ public class DvdController {
         this.service = service;
     }
 
-    @GetMapping("/dvd/{id}")
+    @GetMapping("/list")
+    public List <Dvd> getAllDvd(){
+        return service.getAllDvd();
+    }
+
+    @PostMapping("insert")
+    private int insertDvd(@RequestBody Dvd dvd){
+        service.addDvd(dvd);
+        return dvd.getId();
+    }
+
+    @GetMapping("/finddvd/{id}")
+    private Dvd getDvd(@PathVariable("id") int id){
+        return service.getDvdById(id);
+    }
+
+    @DeleteMapping("/dvd/{id}")
     private void getDvd(@PathVariable("id") long id){
         service.delete(id);
     }
