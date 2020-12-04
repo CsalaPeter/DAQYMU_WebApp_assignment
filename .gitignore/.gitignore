@@ -1,0 +1,23 @@
+## Maven ##
+target/
+
+## IntelliJ IDEA ##
+.idea
+.idea/
+**/*.pyc
+**/*.iml
+*.iws
+*.iml
+*.ipr
+/out/
+.project
+
+## Linux ##
+.directory
+
+## NetBeans ##
+**/nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
