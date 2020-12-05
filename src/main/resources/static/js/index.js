@@ -4,7 +4,7 @@ $(function() {
         e.preventDefault();
         $.ajax({
             type: 'post',
-            url: `/api/insert`,
+            url: `/api/save`,
             data: JSON.stringify({
                 fname: $("#addDvdName").val(),
                 genre: $("#gdropdown").val(),

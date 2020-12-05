@@ -22,7 +22,7 @@ public class DvdController {
         return service.getAllDvd();
     }
 
-    @PostMapping("/insert")
+    @PostMapping("/save")
     private Long insertDvd(@RequestBody Dvd dvd) {
         service.addDvd(dvd);
         return dvd.getId();
