@@ -4,7 +4,7 @@ $(function() {
         e.preventDefault();
         $.ajax({
             type: 'post',
-            url: 'https://localhost:8080/api/insert',
+            url: `/api/insert`,
             data: JSON.stringify({
                 fname: $("#addDvdName").val(),
                 genre: $("#gdropdown").val(),
@@ -15,7 +15,6 @@ $(function() {
 
             }),
             contentType: "application/json",
-            dataType: "jsonp",
             success: function () {
                 listDvds()
             },
@@ -33,11 +32,11 @@ function toHome() {
 
 function listDvds() {
     $("#description").fadeOut(700)
-    $("#addDvdForm").fadeOut(700)
+    $("#addDvd").fadeOut(700)
     $("#listDvds").fadeIn(700)
 
 
-$.getJSON('https://localhost:8080/api/list', function (data){
+$.getJSON('/api/list', function (data){
     let table = $('<table id="listTableDvds"></table>');
     table.append('<tr><th class="listth">Film name</th><th class="listth">Genre</th><th class="listth">Director</th><th class="listth">Age rating</th><th class="listth">Playtime</th></tr>');
     $.each(data, function (key, value){
@@ -83,10 +82,10 @@ function addDvd() {
     for (let i=0; i<generarr.length; i++){
         goption += '<option value="'+ generarr[i] + '">' +generarr[i]+ '</option>';
     }
-    $('#gdropdown').append(goption);
+    gdropdown.append(goption);
 
     for (let i=0; i<agearr.length; i++){
         aoption  += '<option value="'+ agearr[i] + '">' +agearr[i]+ '</option>';
     }
-    $('#adropdown').append(aoption );
+    adropdown.append(aoption );
 }
