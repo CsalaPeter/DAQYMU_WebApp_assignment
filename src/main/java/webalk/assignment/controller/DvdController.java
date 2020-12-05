@@ -18,29 +18,29 @@ public class DvdController {
     }
 
     @GetMapping("/list")
-    public List <Dvd> getAllDvd(){
+    public List<Dvd> getAllDvd() {
         return service.getAllDvd();
     }
 
-    @PostMapping("insert")
-    private int insertDvd(@RequestBody Dvd dvd){
+    @PostMapping("/insert")
+    private Long insertDvd(@RequestBody Dvd dvd) {
         service.addDvd(dvd);
         return dvd.getId();
     }
 
     @GetMapping("/finddvd/{id}")
-    private Dvd getDvd(@PathVariable("id") int id){
+    private Dvd getDvd(@PathVariable long id) {
         return service.getDvdById(id);
     }
 
-    @DeleteMapping("/dvd/{id}")
-    private void getDvd(@PathVariable("id") long id){
-        service.delete(id);
+    @DeleteMapping("/delete/{id}")
+    private void deleteDvd(@PathVariable long id) {
+        service.deleteDvd(id);
     }
 
 
     @GetMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "Hello Sir!";
     }
 }

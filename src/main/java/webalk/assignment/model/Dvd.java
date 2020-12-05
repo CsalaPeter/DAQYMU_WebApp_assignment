@@ -12,7 +12,7 @@ public class Dvd
     //mark id as primary key
     @Id
     @Column
-    private int id;
+    private Long id;
     @Column
     private String fname;
     @Column
@@ -24,11 +24,11 @@ public class Dvd
     @Column
     private String playtime;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -12,7 +12,6 @@ $(function() {
                 agerating: $("#adropdown").val(),
                 playtime: $("#addPlaytime").val(),
 
-
             }),
             contentType: "application/json",
             success: function () {
@@ -36,17 +35,19 @@ function listDvds() {
     $("#listDvds").fadeIn(700)
 
 
-$.getJSON('/api/list', function (data){
+$.getJSON('/api/list', function (data) {
     let table = $('<table id="listTableDvds"></table>');
-    table.append('<tr><th class="listth">Film name</th><th class="listth">Genre</th><th class="listth">Director</th><th class="listth">Age rating</th><th class="listth">Playtime</th></tr>');
-    $.each(data, function (key, value){
+    table.append('<tr><th class="listth">Delete</th><th class="listth">Film name</th><th class="listth">Genre</th><th class="listth">Director</th><th class="listth">Age rating</th><th class="listth">Playtime</th></tr>');
+    $.each(data, function (key, value) {
         let row = $('<tr></tr>')
-        let nameCell = $('<td class="listtd">' +value.fname+ '</td>');
-        let generCell = $('<td class="listtd">' +value.genre+ '</td>');
-        let directorCell = $('<td class="listtd">' +value.director+ '</td>');
-        let ageCell = $('<td class="listtd">' +value.agerating+ '</td>');
-        let playtimeCell = $('<td class="listtd">' +value.playtime+ '</td>');
+        let delButton = $('<td class="listtd"><button onclick="deleteDvd(\'' + value.id + '\')">Delete</button></td>');
+        let nameCell = $('<td class="listtd">' + value.fname + '</td>');
+        let generCell = $('<td class="listtd">' + value.genre + '</td>');
+        let directorCell = $('<td class="listtd">' + value.director + '</td>');
+        let ageCell = $('<td class="listtd">' + value.agerating + '</td>');
+        let playtimeCell = $('<td class="listtd">' + value.playtime + '</td>');
 
+        row.append(delButton);
         row.append(nameCell);
         row.append(generCell);
         row.append(directorCell);
@@ -79,13 +80,28 @@ function addDvd() {
     adropdown.append('<option disabled>Choose age Rating</option>');
     adropdown.prop('selectedIndex', 0);
 
-    for (let i=0; i<generarr.length; i++){
-        goption += '<option value="'+ generarr[i] + '">' +generarr[i]+ '</option>';
+    for (let i = 0; i < generarr.length; i++) {
+        goption += '<option value="' + generarr[i] + '">' + generarr[i] + '</option>';
     }
     gdropdown.append(goption);
 
-    for (let i=0; i<agearr.length; i++){
-        aoption  += '<option value="'+ agearr[i] + '">' +agearr[i]+ '</option>';
+    for (let i = 0; i < agearr.length; i++) {
+        aoption += '<option value="' + agearr[i] + '">' + agearr[i] + '</option>';
     }
-    adropdown.append(aoption );
+    adropdown.append(aoption);
+}
+
+function deleteDvd(id) {
+    $.ajax({
+        url: '/api/delete/' + id,
+        type: 'delete',
+        contentType: "application/json",
+        success: function () {
+            listDvds();
+        },
+        error: function () {
+            alert("Something went wrong!")
+        }
+
+    });
 }

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import webalk.assignment.model.Dvd;
 import webalk.assignment.repository.DvdRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,9 +17,7 @@ public class DvdService {
     }
 
     public List<Dvd> getAllDvd() {
-        List <Dvd> dvds = new ArrayList<Dvd>();
-        repo.findAll().forEach(dvd -> dvds.add(dvd));
-        return dvds;
+        return repo.findAll();
     }
 
     public void addDvd(Dvd dvd){
@@ -31,7 +28,7 @@ public class DvdService {
         return repo.findById(id).get();
     }
 
-    public void delete(long id){
+    public void deleteDvd(long id) {
         repo.deleteById(id);
     }
 
