@@ -1,0 +1,163 @@
+body {
+    background-color: whitesmoke;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#banner {
+    font-weight: bolder;
+    font-size: 60px;
+    margin-top: -2%;
+    font-family: "cursive", serif;
+    height: 80px;
+    margin-right: auto;
+    margin-left: 220px;
+}
+
+.home {
+    text-align: center;
+}
+
+#banner .home:HOVER {
+    color: mediumblue;
+    cursor: pointer;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: lightslategray;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+}
+
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+.contentImage {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-left: 220px;
+    margin-right: auto;
+}
+
+
+#description {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    border: 8px solid blue;
+    border-radius: 500px;
+    margin-left: 220px;
+}
+
+p {
+    line-height: 15px; /* within paragraph */
+    margin-bottom: 25px; /* between paragraphs */
+}
+
+#toTop:hover {
+    background-color: royalblue;
+}
+
+#listTableDvd {
+    border: 3px solid black;
+    margin-top: 2%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listth {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.listtd {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#listDvds {
+    display: none;
+    margin-left: 220px;
+}
+
+#addDvd {
+    display: none;
+    margin-left: 220px;
+}
+
+#content {
+    margin: 2% 2% 2% 10%;
+    font-size: 30px;
+}
+
+#submit {
+    width: auto;
+    height: auto;
+    font-size: large;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+}
+
+#textField {
+    width: 250px;
+    height: 30px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: medium;
+}
+
+#gdropdown {
+    width: 250px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: medium;
+}
+
+#adropdown {
+    width: 250px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: medium;
+}

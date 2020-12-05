@@ -14,13 +14,13 @@ public class Dvd
     @Column
     private int id;
     @Column
-    private String film_name;
+    private String fname;
     @Column
     private String genre;
     @Column
-    private String film_director;
+    private String director;
     @Column
-    private String age_rating;
+    private String agerating;
     @Column
     private String playtime;
 
@@ -32,12 +32,12 @@ public class Dvd
         this.id = id;
     }
 
-    public String getFilm_name() {
-        return film_name;
+    public String getFname() {
+        return fname;
     }
 
-    public void setFilm_name(String film_name) {
-        this.film_name = film_name;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
     public String getGenre() {
@@ -48,20 +48,20 @@ public class Dvd
         this.genre = genre;
     }
 
-    public String getFilm_director() {
-        return film_director;
+    public String getDirector() {
+        return director;
     }
 
-    public void setFilm_director(String film_director) {
-        this.film_director = film_director;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
-    public String getAge_rating() {
-        return age_rating;
+    public String getAgerating() {
+        return agerating;
     }
 
-    public void setAge_rating(String age_rating) {
-        this.age_rating = age_rating;
+    public void setAgerating(String agerating) {
+        this.agerating = agerating;
     }
 
     public String getPlaytime() {
