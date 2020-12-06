@@ -102,12 +102,7 @@ p {
     border: 1px solid black;
 }
 
-#listDvds {
-    display: none;
-    margin-left: 220px;
-}
-
-#addDvd {
+#listDvds, #addDvd, #modDvd {
     display: none;
     margin-left: 220px;
 }
@@ -117,7 +112,7 @@ p {
     font-size: 30px;
 }
 
-#submit {
+#submit #modify {
     width: auto;
     height: auto;
     font-size: large;
@@ -142,7 +137,7 @@ p {
     font-size: medium;
 }
 
-#gdropdown {
+#gdropdown #adropdown #gmoddropdown #amoddropdown {
     width: 250px;
     height: 30px;
     box-sizing: border-box;
@@ -152,12 +147,3 @@ p {
     font-size: medium;
 }
 
-#adropdown {
-    width: 250px;
-    height: 30px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 4px;
-    padding-left: 10px;
-    font-size: medium;
-}

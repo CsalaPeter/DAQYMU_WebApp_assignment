@@ -62,4 +62,43 @@
         </form>
     </div>
 </div>
+
+<div id="modDvd">
+    <div id="dvd mod content">
+        <form action="addDvd" method="post" id="modDvdForm">
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td><input id="dvdId" type="text" name="id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Film Name</td>
+                    <td><input id="modDvdName" type="text" name="fname"></td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>
+                        <select id="gmoddropdown" name="genre"> </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Director</td>
+                    <td><input id="modDirector" type="text" name="director"></td>
+                </tr>
+                <tr>
+                    <td>Age rating</td>
+                    <td>
+                        <select id="amoddropdown" name="agerating"> </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Playtime</td>
+                    <td><input id="modPlaytime" type="text" name="playtime"></td>
+                </tr>
+
+            </table>
+            <input id="modify" type="submit" value="Modify DVD">
+        </form>
+    </div>
+</div>
 </body>
