@@ -7,9 +7,9 @@ $(function() {
             url: `/api/save`,
             data: JSON.stringify({
                 fname: $("#addDvdName").val(),
-                genre: $("#gdropdown").val(),
+                genre: $("#genreDropdown").val(),
                 director: $("#addDirector").val(),
-                agerating: $("#adropdown").val(),
+                agerating: $("#ageDropdown").val(),
                 playtime: $("#addPlaytime").val(),
 
             }),
@@ -31,9 +31,9 @@ $(function() {
             data: JSON.stringify({
                 id: $("#dvdId").val(),
                 fname: $("#modDvdName").val(),
-                genre: $("#gmoddropdown").val(),
+                genre: $("#genreModDropdown").val(),
                 director: $("#modDirector").val(),
-                agerating: $("#amoddropdown").val(),
+                agerating: $("#ageModDropdown").val(),
                 playtime: $("#modPlaytime").val(),
 
             }),
@@ -98,10 +98,10 @@ function addDvd() {
     $("#listDvds").fadeOut(700)
     $("#modDvd").fadeOut(700)
 
-    let gdropdown = $('#gdropdown');
-    let adropdown = $('#adropdown');
-    let generarr = ["Action", "Sci-fi"];
-    let agearr = ["PG", "M", "R18+"];
+    let gdropdown = $('#genreDropdown');
+    let adropdown = $('#ageDropdown');
+    let genreArr = ["Action", "Sci-fi"];
+    let ageArr = ["PG", "M", "R18+"];
     let goption = '';
     let aoption = '';
 
@@ -113,14 +113,14 @@ function addDvd() {
     adropdown.append('<option disabled>Choose age Rating</option>');
     adropdown.prop('selectedIndex', 0);
 
-    for (let i = 0; i < generarr.length; i++) {
-        goption += '<option value="' + generarr[i] + '">' + generarr[i] + '</option>';
+    for (let i = 0; i < genreArr.length; i++) {
+        goption += '<option value="' + genreArr[i] + '">' + genreArr[i] + '</option>';
     }
     gdropdown.append(goption);
 
 
-    for (let i = 0; i < agearr.length; i++) {
-        aoption += '<option value="' + agearr[i] + '">' + agearr[i] + '</option>';
+    for (let i = 0; i < ageArr.length; i++) {
+        aoption += '<option value="' + ageArr[i] + '">' + ageArr[i] + '</option>';
     }
     adropdown.append(aoption);
 }
@@ -137,47 +137,47 @@ function modifyDvd(dvd) {
     modDvd()
     $('#modDvdForm #dvdId').val(dvd.id)
     $('#modDvdForm #modDvdName').val(dvd.fname)
-    $('#modDvdForm #gmoddropdown').val(dvd.genre)
+    $('#modDvdForm #genreModDropdown').val(dvd.genre)
     $('#modDvdForm #modDirector').val(dvd.director)
-    $('#modDvdForm #amoddropdown').val(dvd.agerating)
+    $('#modDvdForm #ageModDropdown').val(dvd.agerating)
     $('#modDvdForm #modPlaytime').val(dvd.playtime)
 
-    let gmoddropdown = $('#gmoddropdown');
-    let amoddropdown = $('#amoddropdown');
-    let mgenerarr = ["Action", "Sci-fi"];
-    let magearr = ["PG", "M", "R18+"];
-    let goption = '';
-    let aoption = '';
+    let genreModDropdown = $('#genreModDropdown');
+    let ageModDropdown = $('#ageModDropdown');
+    let generModArr = ["Action", "Sci-fi"];
+    let ageModArr = ["PG", "M", "R18+"];
+    let genreOption = '';
+    let ageOption = '';
 
 
-    gmoddropdown.empty();
-    amoddropdown.empty();
-    gmoddropdown.append('<option value="o" disabled>Choose a Gener</option>');
-    amoddropdown.append('<option value="o" disabled>Choose age Rating</option>');
+    genreModDropdown.empty();
+    ageModDropdown.empty();
+    genreModDropdown.append('<option value="o" disabled>Choose a Gener</option>');
+    ageModDropdown.append('<option value="o" disabled>Choose age Rating</option>');
 
-    for (let i = 0; i < mgenerarr.length; i++) {
-        goption += '<option value="' + mgenerarr[i] + '">' + mgenerarr[i] + '</option>';
+    for (let i = 0; i < generModArr.length; i++) {
+        genreOption += '<option value="' + generModArr[i] + '">' + generModArr[i] + '</option>';
     }
-    gmoddropdown.append(goption);
+    genreModDropdown.append(genreOption);
 
-    gmoddropdown.val("o");
-    for (let i = 0; i < mgenerarr.length; i++) {
-        if (mgenerarr[i] === dvd.genre) {
-            gmoddropdown.val(mgenerarr[i])
-            console.log(gmoddropdown.val())
+    genreModDropdown.val("o");
+    for (let i = 0; i < generModArr.length; i++) {
+        if (generModArr[i] === dvd.genre) {
+            genreModDropdown.val(generModArr[i])
+            console.log(genreModDropdown.val())
         }
     }
 
-    for (let i = 0; i < magearr.length; i++) {
-        aoption += '<option value="' + magearr[i] + '">' + magearr[i] + '</option>';
+    for (let i = 0; i < ageModArr.length; i++) {
+        ageOption += '<option value="' + ageModArr[i] + '">' + ageModArr[i] + '</option>';
     }
-    amoddropdown.append(aoption);
+    ageModDropdown.append(ageOption);
 
-    amoddropdown.val("o");
-    for (let i = 0; i < magearr.length; i++) {
-        if (magearr[i] === dvd.agerating) {
-            amoddropdown.val(magearr[i])
-            console.log(amoddropdown.val())
+    ageModDropdown.val("o");
+    for (let i = 0; i < ageModArr.length; i++) {
+        if (ageModArr[i] === dvd.agerating) {
+            ageModDropdown.val(ageModArr[i])
+            console.log(ageModDropdown.val())
         }
     }
 }
