@@ -164,7 +164,6 @@ function modifyDvd(dvd) {
     for (let i = 0; i < generModArr.length; i++) {
         if (generModArr[i] === dvd.genre) {
             genreModDropdown.val(generModArr[i])
-            console.log(genreModDropdown.val())
         }
     }
 
@@ -177,7 +176,6 @@ function modifyDvd(dvd) {
     for (let i = 0; i < ageModArr.length; i++) {
         if (ageModArr[i] === dvd.agerating) {
             ageModDropdown.val(ageModArr[i])
-            console.log(ageModDropdown.val())
         }
     }
 }
