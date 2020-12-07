@@ -112,7 +112,7 @@ p {
     font-size: 30px;
 }
 
-#submit #modify {
+#submit, #modify {
     width: auto;
     height: auto;
     font-size: large;
@@ -137,7 +137,7 @@ p {
     font-size: medium;
 }
 
-#genreDropdown #ageDropdown #genreModDropdown #ageModDropdown {
+#genreDropdown, #ageDropdown, #genreModDropdown, #ageModDropdown {
     width: 250px;
     height: 30px;
     box-sizing: border-box;

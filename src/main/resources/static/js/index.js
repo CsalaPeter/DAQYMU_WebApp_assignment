@@ -98,31 +98,31 @@ function addDvd() {
     $("#listDvds").fadeOut(700)
     $("#modDvd").fadeOut(700)
 
-    let gdropdown = $('#genreDropdown');
-    let adropdown = $('#ageDropdown');
-    let genreArr = ["Action", "Sci-fi"];
-    let ageArr = ["PG", "M", "R18+"];
-    let goption = '';
-    let aoption = '';
+    let genreDropdown = $('#genreDropdown');
+    let ageDropdown = $('#ageDropdown');
+    let genreArr = ["Action", "Adventure", "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Sci-fi", "Thriller"];
+    let ageArr = ["G", "PG", "PG-13", "R", "R18+"];
+    let genreOption = '';
+    let ageOption = '';
 
 
-    gdropdown.empty();
-    adropdown.empty();
-    gdropdown.append('<option disabled>Choose a Gener</option>');
-    gdropdown.prop('selectedIndex', 0);
-    adropdown.append('<option disabled>Choose age Rating</option>');
-    adropdown.prop('selectedIndex', 0);
+    genreDropdown.empty();
+    ageDropdown.empty();
+    genreDropdown.append('<option disabled>Choose a Gener</option>');
+    genreDropdown.prop('selectedIndex', 0);
+    ageDropdown.append('<option disabled>Choose age Rating</option>');
+    ageDropdown.prop('selectedIndex', 0);
 
     for (let i = 0; i < genreArr.length; i++) {
-        goption += '<option value="' + genreArr[i] + '">' + genreArr[i] + '</option>';
+        genreOption += '<option value="' + genreArr[i] + '">' + genreArr[i] + '</option>';
     }
-    gdropdown.append(goption);
+    genreDropdown.append(genreOption);
 
 
     for (let i = 0; i < ageArr.length; i++) {
-        aoption += '<option value="' + ageArr[i] + '">' + ageArr[i] + '</option>';
+        ageOption += '<option value="' + ageArr[i] + '">' + ageArr[i] + '</option>';
     }
-    adropdown.append(aoption);
+    ageDropdown.append(ageOption);
 }
 
 function modDvd() {
@@ -144,8 +144,8 @@ function modifyDvd(dvd) {
 
     let genreModDropdown = $('#genreModDropdown');
     let ageModDropdown = $('#ageModDropdown');
-    let generModArr = ["Action", "Sci-fi"];
-    let ageModArr = ["PG", "M", "R18+"];
+    let generModArr = ["Action", "Adventure", "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Sci-fi", "Thriller"];
+    let ageModArr = ["G", "PG", "PG-13", "R", "R18+"];
     let genreOption = '';
     let ageOption = '';
 
