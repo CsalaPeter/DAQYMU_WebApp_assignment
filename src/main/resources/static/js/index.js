@@ -47,6 +47,20 @@ $(function() {
         })
     });
 
+    $('#dvdDetailsForm').on("read", function () {
+        $.ajax({
+            data: JSON.stringify({
+                id: $("#dvdIdDet").val(),
+                fname: $("#dvdNameDet").val(),
+                genre: $("#genreDet").val(),
+                director: $("#directorDet").val(),
+                agerating: $("#ageDet").val(),
+                playtime: $("#playtimeDet").val(),
+
+            }),
+        })
+    });
+
 });
 
 function toHome() {
@@ -65,11 +79,12 @@ function listDvds() {
 
 $.getJSON('/api/list', function (data) {
     let table = $('<table id="listTableDvds"></table>');
-    table.append('<tr><th class="listth">Modify</th><th class="listth">Delete</th><th class="listth">ID</th><th class="listth">Film name</th><th class="listth">Genre</th><th class="listth">Director</th><th class="listth">Age rating</th><th class="listth">Playtime</th></tr>');
+    table.append('<tr><th class="listth">Modify</th><th class="listth">Delete</th><th class="listth">Details</th><th class="listth">ID</th><th class="listth">Film name</th><th class="listth">Genre</th><th class="listth">Director</th><th class="listth">Age rating</th><th class="listth">Playtime</th></tr>');
     $.each(data, function (key, value) {
         let row = $('<tr></tr>')
         let modButton = $("<td class='listtd'><button onclick='modifyDvd(" + JSON.stringify(value) + ")'>Modify</button></td>");
         let delButton = $('<td class="listtd"><button onclick="deleteDvd(\'' + value.id + '\')">Delete</button></td>');
+        let detButton = $("<td class='listtd'><button onclick='dvdDetails(" + JSON.stringify(value) + ")'>Details</button></td>");
         let idCell = $('<td class="listtd">' + value.id + '</td>');
         let nameCell = $('<td class="listtd">' + value.fname + '</td>');
         let generCell = $('<td class="listtd">' + value.genre + '</td>');
@@ -79,6 +94,7 @@ $.getJSON('/api/list', function (data) {
 
         row.append(modButton);
         row.append(delButton);
+        row.append(detButton);
         row.append(idCell);
         row.append(nameCell);
         row.append(generCell);
@@ -178,6 +194,25 @@ function modifyDvd(dvd) {
             ageModDropdown.val(ageModArr[i])
         }
     }
+}
+
+function dvdDet() {
+    $("#description").fadeOut(700)
+    $("#addDvd").fadeOut(700)
+    $("#listDvds").fadeOut(700)
+    $("#modDvd").fadeOut(700)
+    $("#dvdDetails").fadeIn(700)
+
+}
+
+function dvdDetails(dvd) {
+    dvdDet()
+    $('#dvdDetailsForm #dvdIdDet').val(dvd.id)
+    $('#dvdDetailsForm #dvdNameDet').val(dvd.fname)
+    $('#dvdDetailsForm #genreDet').val(dvd.genre)
+    $('#dvdDetailsForm #directorDet').val(dvd.director)
+    $('#dvdDetailsForm #ageDet').val(dvd.agerating)
+    $('#dvdDetailsForm #playtimeDet').val(dvd.playtime)
 }
 
 function deleteDvd(id) {

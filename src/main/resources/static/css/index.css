@@ -102,7 +102,7 @@ p {
     border: 1px solid black;
 }
 
-#listDvds, #addDvd, #modDvd {
+#listDvds, #addDvd, #modDvd, #dvdDetails {
     display: none;
     margin-left: 220px;
 }

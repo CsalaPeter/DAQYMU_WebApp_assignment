@@ -38,9 +38,4 @@ public class DvdController {
         service.deleteDvd(id);
     }
 
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello Sir!";
-    }
 }
