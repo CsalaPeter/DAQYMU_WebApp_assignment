@@ -68,6 +68,7 @@ function toHome() {
     $("#addDvd").fadeOut(700)
     $("#modDvd").fadeOut(700)
     $("#listDvds").fadeOut(700)
+    $("#dvdDetails").fadeOut(700)
 }
 
 function listDvds() {
@@ -75,6 +76,7 @@ function listDvds() {
     $("#addDvd").fadeOut(700)
     $("#modDvd").fadeOut(700)
     $("#listDvds").fadeIn(700)
+    $("#dvdDetails").fadeOut(700)
 
 
 $.getJSON('/api/list', function (data) {
@@ -113,6 +115,7 @@ function addDvd() {
     $("#addDvd").fadeIn(700)
     $("#listDvds").fadeOut(700)
     $("#modDvd").fadeOut(700)
+    $("#dvdDetails").fadeOut(700)
 
     let genreDropdown = $('#genreDropdown');
     let ageDropdown = $('#ageDropdown');
@@ -146,6 +149,7 @@ function modDvd() {
     $("#addDvd").fadeOut(700)
     $("#listDvds").fadeOut(700)
     $("#modDvd").fadeIn(700)
+    $("#dvdDetails").fadeOut(700)
 
 }
 

@@ -14,12 +14,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
     @Override
-    public void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable();
-    }
-
-    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("Birdie")
@@ -32,4 +26,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return NoOpPasswordEncoder.getInstance();
     }
 
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .antMatchers("/**").hasAnyRole("ADMIN")
+                .and()
+                .formLogin().permitAll();
+        http.csrf().disable();
+    }
 }
+
+
