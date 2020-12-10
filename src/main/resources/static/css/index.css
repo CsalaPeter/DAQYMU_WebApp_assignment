@@ -34,7 +34,7 @@ table {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: lightslategray;
+    background-color: cornflowerblue;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -49,18 +49,8 @@ table {
 
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: orangered;
 }
-
-
-.contentImage {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin-left: 220px;
-    margin-right: auto;
-}
-
 
 #description {
     text-align: center;
@@ -90,6 +80,7 @@ p {
 }
 
 .listth {
+    color: orangered;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -97,6 +88,7 @@ p {
 }
 
 .listtd {
+    background: cornflowerblue;
     font-size: 20px;
     text-align: center;
     border: 1px solid black;
@@ -123,7 +115,7 @@ p {
     display: inline-block;
     cursor: pointer;
     border-radius: 5px;
-    float: right;
+    float: left;
 }
 
 #textField {
